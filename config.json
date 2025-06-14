@@ -1,6 +1,11 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
+    "title":"记录生活",
+    "subTitle":"对抗孤独",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
-    "GMEEK_VERSION":"last"
+    "GMEEK_VERSION":"last",
+    "displayTitle":"gvklmlreiy",
+    "startSite":"06/16/2025",
+    "onePageListNum":10,
+    "urlMode":"ru_translit",
+    "bottomText":"made by love❤️"
 }
