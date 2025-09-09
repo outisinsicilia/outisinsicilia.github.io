@@ -1,13 +1,12 @@
 {
-    "title":"西西里岛的奥提斯",
+    "title":"0ut15 in Sicilia-西西里岛的奥提斯",
     "subTitle":"没有人、睡莲酒与尖刺桩",
-    "avatarUrl":"https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%BE%B7%E4%BF%AE%E6%96%AF#/media/File:Head_Odysseus_MAR_Sperlonga.jpg",
+    "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
     "GMEEK_VERSION":"last",
-    "displayTitle":"0ut15 in Sicilia-西西里岛的奥提斯",
     "startSite":"06/16/2025",
-    "onePageListNum":10,
-    "urlMode":"ru_translit",
-    "bottomText":"made by love❤️",
+    "onePageListNum":25,
+    "urlMode":"issue",
     "allHead":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>",
-    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
+    "needComment":0
 }
