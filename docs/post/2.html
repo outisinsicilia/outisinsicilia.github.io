@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
-    <link rel="icon" href="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%BE%B7%E4%BF%AE%E6%96%AF#/media/File:Head_Odysseus_MAR_Sperlonga.jpg"><script>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
@@ -18,8 +18,8 @@
 
 - win11重装。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://outisinsicilia.github.io/post/%E6%80%BB%E7%BB%93%E4%B8%80%E4%BA%9B%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%81%A2%E5%A4%8D%E5%8E%9F%E6%9D%A5%E4%BD%BF%E7%94%A8%E4%B9%A0%E6%83%AF%E7%9A%84%E7%BB%8F%E9%AA%8C.html">
-<meta property="og:image" content="https://zh.wikipedia.org/wiki/%E5%A5%A5%E5%BE%B7%E4%BF%AE%E6%96%AF#/media/File:Head_Odysseus_MAR_Sperlonga.jpg">
+<meta property="og:url" content="https://outisinsicilia.github.io/post/2.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
 <title>总结一些重装系统及恢复原来使用习惯的经验</title>
 
 
@@ -199,13 +199,10 @@ DisableScanOnRealtimeEnable
 <ul>
 <li>快速找到该文件夹的方法：win+R打开“运行”，输入shell:startup，即可直接打开该文件夹。</li>
 </ul></div>
-<div style="font-size:small;margin-top:8px;float:right;">made by love❤️</div>
-
-<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
-<div class="comments" id="comments"></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
 
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://outisinsicilia.github.io">西西里岛的奥提斯</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://outisinsicilia.github.io">0ut15 in Sicilia-西西里岛的奥提斯</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -260,41 +257,6 @@ document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
 
 
 
-function openComments(){
-    cm=document.getElementById("comments");
-    cmButton=document.getElementById("cmButton");
-    cmButton.innerHTML="loading";
-    span=document.createElement("span");
-    span.setAttribute("class","AnimatedEllipsis");
-    cmButton.appendChild(span);
-
-    script=document.createElement("script");
-    script.setAttribute("src","https://utteranc.es/client.js");
-    script.setAttribute("repo","outisinsicilia/outisinsicilia.github.io");
-    script.setAttribute("issue-term","title");
-    
-    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
-    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
-    else{script.setAttribute("theme","preferred-color-scheme");}
-    
-    script.setAttribute("crossorigin","anonymous");
-    script.setAttribute("async","");
-    cm.appendChild(script);
-
-    int=self.setInterval("iFrameLoading()",200);
-}
-
-function iFrameLoading(){
-    var utterances=document.getElementsByClassName('utterances');
-    if(utterances.length==1){
-        if(utterances[0].style.height!=""){
-            utterancesLoad=1;
-            int=window.clearInterval(int);
-            document.getElementById("cmButton").style.display="none";
-            console.log("utterances Load OK");
-        }
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const createClipboardHTML = (codeContent, additionalClasses = '') => `
