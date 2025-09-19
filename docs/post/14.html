@@ -73,15 +73,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>跨国收发电子邮件（尤其是经加密的电子邮件）丢信率极高。</p>
 </div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>主题、发件人与收件人不会被加密，仍为明文。</p>
+</div>
 <div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>端到端加密技术本身无法避免Trust on First Use (TOFU，首次交换密钥时的信任危机) 问题，具体见下文。</p>
 </div>
 <h2>基本情况</h2>
 <ul>
 <li>Windows系统。</li>
-<li>使用GnuPG图形化界面（Kleopatra）。</li>
+<li>使用图形化界面（Kleopatra）。</li>
 </ul>
-<h2>生成、备份与公布密钥</h2>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>建议专密专用，即一组密钥对仅用于一种用途（对应一个邮箱的加密）。</p>
+<h2>生成与导出密钥</h2>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>建议专密专用，即一组密钥对仅对应一种用途（一个邮箱的加密）。</p>
 </div>
 <h3>非对称加密原理</h3>
 <ul>
@@ -93,7 +95,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>加密：公钥加密，私钥解密。</li>
 <li>签名：私钥签名，公钥验证。</li>
 </ul>
-<h3>安装与使用Gpg4win</h3>
+<h3>安装Gpg4win</h3>
 <ul>
 <li>下载链接：<a href="https://gpg4win.org/download.html" rel="nofollow">https://gpg4win.org/download.html</a></li>
 </ul>
@@ -106,7 +108,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h3>创建OpenPGP密钥对</h3>
 <ul>
 <li>打开Kleopatra，点击“新建密钥对”。</li>
-<li>填写名字与电子邮箱。填写的电子邮箱与欲使用端到端加密的电子邮箱对应。</li>
+<li>填写名字与电子邮箱。填写的电子邮箱与欲使用端到端加密的电子邮箱保持一致。</li>
 <li>强烈建议勾选“使用密码句保护生成的密钥”，否则任何访问该电脑的人均可查看存储其中的私钥。</li>
 </ul>
 <blockquote>
@@ -117,7 +119,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>点击确定，等待一段时间（视加密方式而定），完成密钥对创建。</li>
 </ul>
 <h3>导出公钥、私钥与吊销证书</h3>
-<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>导出的私钥文件应仅用于导入thunderbird！导入完毕后请立即删除。</p>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>该教程中导出的私钥文件应仅用于导入thunderbird！导入完毕后请立即删除。</p>
+</div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>重置或更换电脑时，请将公钥与私钥导出并妥善备份。</p>
 </div>
 <ul>
 <li>导出公钥：右键点击创建的密钥对，点击“导出…”。</li>
@@ -131,19 +135,19 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>密钥对被吊销后，先前加密/签名的文件仍可使用密钥对进行解密/验证，但密钥对持有者无法再用其签名任何新文件；持有公钥的第三方若已收到吊销证书，也无法再使用该公钥进行加密。</p>
 </blockquote>
 <h3>（可选）直接在thunderbird上创建密钥</h3>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>完全可以只在thunderbird上创建密钥，但GnuPG不仅可以支持使用OpenPGP更进阶的用法，还更有利于对密钥对的完全掌控。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>完全可以只在thunderbird上创建密钥。但GnuPG不仅可以支持OpenPGP更进阶的用法，还更有利于对密钥对的完全掌控。</p>
 </div>
 <ul>
 <li>右键点击thunderbird上欲设置加密的邮箱，点击“设置”，进入账户设置。</li>
 <li>点击“端到端加密”中的“添加密钥…”，在弹出的界面中选择“新建OpenPGP密钥”。</li>
-<li>“身份标识”项选择欲设置加密的邮箱，其他设置项同前。</li>
+<li>“身份标识”项选择欲设置加密的邮箱。其他设置项同前，按需选择。</li>
 <li>点击确定，等待一段时间，完成密钥对生成。</li>
 </ul>
 <h2>在thunderbird上导入私钥</h2>
 <ul>
 <li>右键点击thunderbird上欲设置加密的邮箱，点击“设置”，进入账户设置。</li>
 <li>点击“端到端加密”中的“添加密钥…”，在弹出的界面中选择“导入现有的OpenPGP密钥”。</li>
-<li>选择导入的文件，导入先前导出的私钥即可。</li>
+<li>选择导入的文件，导入先前导出的私钥文件即可。</li>
 </ul>
 <blockquote>
 <p>若先前设置过保护私钥的密码句，导入时会提示输入密码。</p>
@@ -159,7 +163,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>公用密钥服务器（可在此查询、上传公钥）：<a href="https://keys.openpgp.org/" rel="nofollow">https://keys.openpgp.org/</a></p>
 </blockquote>
 <blockquote>
-<p>公钥服务器会使用创建密钥对时填写的邮箱，对密钥所有者身份进行验证。如需使用密钥服务器，请务必在创建密钥对时填写欲使用加密的真实邮箱。</p>
+<p>该公钥服务器会使用创建密钥对时填写的邮箱，对密钥所有者身份进行验证。如需使用该密钥服务器，请务必在创建密钥对时填写欲使用加密的真实邮箱。</p>
 </blockquote>
 <h3>导入公钥</h3>
 <blockquote>
@@ -189,7 +193,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>通过已与对方建立的其他可信渠道交换公钥（IM、短信、面对面交流……）</li>
 </ul>
 <blockquote>
-<p>不建议通过“将要在通信时使用端到端加密的邮箱账号”交换公钥。</p>
+<p>不建议通过“将要使用端到端加密的邮箱账号”交换公钥。</p>
 </blockquote>
 <h2>进行加密通信</h2>
 <h3>加密文本后发送密文</h3>
