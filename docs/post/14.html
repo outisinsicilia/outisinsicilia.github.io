@@ -131,7 +131,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>密钥对被吊销后，先前加密/签名的文件仍可使用密钥对进行解密/验证，但密钥对持有者无法再用其签名任何新文件；持有公钥的第三方若已收到吊销证书，也无法再使用该公钥进行加密。</p>
 </blockquote>
 <h2>在thunderbird导入私钥</h2>
-<h2>（可选）直接在thunderbird上创建与使用密钥</h2>
+<h2>（可选）直接在thunderbird上创建密钥</h2>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>只在thunderbird上创建密钥当然可以，但GnuPG不仅可以支持使用OpenPGP更进阶的用法，还更有利于对密钥对的完全掌控。</p>
+</div>
+<ul>
+<li>右键点击thunderbird上欲设置加密的邮箱，点击“设置”，进入账户设置。</li>
+<li>点击“端到端加密”中的“添加密钥…”，在弹出的界面中选择“新建OpenPGP密钥”。</li>
+<li>“身份标识”项选择欲设置加密的邮箱，其他设置项同前。</li>
+<li>点击确定，等待一段时间，完成密钥对生成。</li>
+</ul>
 <h2>与他人交换公钥</h2>
 <h3>发送公钥</h3>
 <ul>
@@ -142,9 +150,29 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p>公用密钥服务器（可在此查询、上传公钥）：<a href="https://keys.openpgp.org/" rel="nofollow">https://keys.openpgp.org/</a></p>
 </blockquote>
+<blockquote>
+<p>公钥服务器会使用创建密钥对时填写的邮箱，对密钥所有者身份进行验证。请务必填写欲使用加密的真实邮箱。</p>
+</blockquote>
 <h3>导入公钥</h3>
+<ul>
+<li>接收并导入收到的公钥文件。</li>
+<li>复制公钥文本并导入。</li>
+<li>在密钥服务器上搜索。</li>
+</ul>
 <h3>应对TOFU问题</h3>
+<ul>
+<li>TOFU问题：首次交换公钥与邮箱账号时，我获取到的这个公钥/邮箱账号，是否真正属于“我想要联系的人”？</li>
+</ul>
 <h2>进行加密通信</h2>
+<h2>（可选）使用提供端到端加密服务的邮件服务商</h2>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>所谓“端到端加密服务”通常仅限于使用该邮件服务的邮箱账号之间，且需要主动开启。不同服务商邮箱账号间的加密通信仍需单独配置。</p>
+</div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>生成的私钥通常由服务商保存，用户可设置密码加密私钥。</p>
+</div>
+<ul>
+<li>proton mail：<a href="https://account.proton.me/mail" rel="nofollow">https://account.proton.me/mail</a></li>
+<li>tuta mail：<a href="https://app.tuta.com/" rel="nofollow">https://app.tuta.com/</a></li>
+</ul>
 <h2>参考</h2>
 <ul>
 <li><a href="https://emailselfdefense.fsf.org/zh-hans/" rel="nofollow">https://emailselfdefense.fsf.org/zh-hans/</a></li>
